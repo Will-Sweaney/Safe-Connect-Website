@@ -1,30 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
-// import "assets/css/bootstrap.min.css";
-// import "assets/scss/now-ui-kit.scss?v=1.5.0";
-// import "assets/demo/demo.css?v=1.5.0";
-// import "assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
+import "assets/css/sc-ui.css";
+import theme from "assets/mui-theme/sc-theme";
 
-import Index from "./views/Index.js";
-// import LoginPage from "views/login/LoginPage.js";
-// import SignupPage from "views/login/SignUp.js"
-// import LandingPage from "views/pages/LandingPage.js";
-// import CarbonCalc from "views/pages/CarbonCalc.js"
+import Home from "views/Home.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/index" element={<Index />} />
-      {/* <Route path="/landing-page" element={<LandingPage />} />
-      <Route path="/login-page" element={<LoginPage />} />
-      <Route path="/signup-page" element={<SignupPage />} />
-      <Route path="/carbon-footprint-calculator" element={<CarbonCalc />} /> */}
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/home" element={<Home />} />
 
-      <Route path="*" element={<Navigate to="/index" replace />} />
-    </Routes>
-  </BrowserRouter>
+        <Route path="*" element={<Navigate to="/home" replace />} />
+      </Routes>
+    </BrowserRouter>
+  </ThemeProvider>
 );
