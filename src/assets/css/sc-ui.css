@@ -4,35 +4,49 @@
 
 .leaflet-routing-alternatives-container {
     margin-top: 80px;
-    background-color: rgba(200, 200, 200, 0.2);
+    background-color: #FFFFFF;
     border-radius: 8px;
     padding: 10px;
-    color: #ffffff;
+    color: #000000;
     font-family: Arial, sans-serif;
-    max-width: 500px;
+    right: 500px;
 }
 
-.leaflet-routing-alternative {
+.leaflet-routing-alt {
     padding: 8px;
     margin: 5px 0;
     border-radius: 4px;
-    background-color: rgba(50, 50, 50, 0.9);
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-.leaflet-routing-alternative:hover {
-    background-color: rgba(70, 70, 70, 0.9);
-}
-
-.leaflet-routing-alternative h3,
-.leaflet-routing-alternative p {
+.leaflet-routing-alt h3,
+.leaflet-routing-alt p {
     margin: 0;
     font-size: 14px;
-    color: #c0c0c0;
+    color: #121212;
 }
 
-.leaflet-routing-alternative-active {
-    background-color: rgba(100, 100, 100, 0.9);
-    color: #ffeb3b;
+.leaflet-routing-alt table tr:hover {
+    background-color: #CCCCCC;
+}
+
+@keyframes dashOffsetAnimation {
+    100% {
+        stroke-dashoffset: 40;
+    }
+}
+
+.leaflet-interactive {
+    animation: dashOffsetAnimation 1.5s linear infinite;
+}
+
+.leaflet-interactive:hover {
+    stroke-width: 8;
+    
+}
+
+@media (max-width: 900px) {
+    .navbar-title {
+        display: none;
+    }
 }

@@ -24,9 +24,15 @@ const Route = () => {
         L.latLng(end)
       ],
       routeWhileDragging: true,
+      showAlternatives: true,
+
       lineOptions: {
-        styles: [{ color: 'blue', weight: 4 }]
+        styles: [{ color: '#ffff00', weight: 4, dashArray: 20}]
       },
+      altLineOptions: {
+        styles: [{color: 'gray', weight: 4}]
+      },
+      
       createMarker: (i, waypoint, n) => {
         const icon = waypointIcon;
         return L.marker(waypoint.latLng, { icon, draggable: true });
@@ -55,7 +61,7 @@ const MapComponent = () => {
         url="http://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      <ZoomControl position="bottomleft" />
+      <ZoomControl position="bottomright" />
       <Route />
     </MapContainer>
   );

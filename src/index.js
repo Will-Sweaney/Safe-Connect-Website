@@ -7,7 +7,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import "assets/css/sc-ui.css";
 import theme from "assets/mui-theme/sc-theme";
 
-import Home from "views/Home.js";
+import Home from "pages/Home.js";
+import About from "pages/About.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -17,6 +18,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
 
         <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
